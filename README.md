@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @PratimeshTiwari
 - 👀 I’m interested in Competing in Hackatons and Coding Clubs
-- 🌱 I’m currently learning C++ and Java 
+- 🌱 I’m currently learning C/C++,Python and Javascript.
 - 💞️ I’m looking to collaborate with other professional to get a clear picture of what I'm doing and where I'm upto
 - 📫 How to reach me ->drop a email at hey@pratimeshtiwari.com

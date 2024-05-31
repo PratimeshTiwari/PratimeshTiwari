@@ -6,6 +6,6 @@
 
 💞️ I am eager to collaborate with other professionals who can provide valuable insights and help me gain a clearer perspective on my progress and direction.
 
-📫 If you'd like to reach out to me or explore potential collaborations, please feel free to drop me an email at hey@pratimeshtiwari.com.
+📫 If you'd like to reach out to me or explore potential collaborations, please feel free to drop me an email at hello@pratimesh.com.
 
 Looking forward to connecting with like-minded individuals and embarking on exciting ventures together!

@@ -54,7 +54,7 @@ A concurrent RSS feed aggregator — Go workers, Postgres, and a small REST API.
 
 Collaborating on developer tooling and AI-agent projects, hackathon teams, and code review
 from people who'll tell me what's wrong with my architecture. Reach me at
-**hello@pratimesh.com** or [@_pratimesh](https://twitter.com/_pratimesh).
+**pratimesh2004@gmail.com** or [@_pratimesh](https://twitter.com/_pratimesh).
 
 ---
 

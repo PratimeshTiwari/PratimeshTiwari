@@ -8,7 +8,7 @@
 <p align="center">
   <a href="https://pratimeshtiwari.com"><img src="https://img.shields.io/badge/Website-pratimeshtiwari.com-0b5fff?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="https://twitter.com/_pratimesh"><img src="https://img.shields.io/badge/X-@__pratimesh-000000?style=flat-square&logo=x&logoColor=white"></a>
-  <a href="mailto:hello@pratimesh.com"><img src="https://img.shields.io/badge/Email-pratimesh2004@gmail.com-c14438?style=flat-square&logo=gmail&logoColor=white"></a>
+  <a href="mailto:pratimesh2004@gmail.com"><img src="https://img.shields.io/badge/Email-pratimesh2004@gmail.com-c14438?style=flat-square&logo=gmail&logoColor=white"></a>
   <!-- LinkedIn: paste your real profile URL below, or delete this badge -->
   <a href="https://www.linkedin.com/in/pratimeshtiwari/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=flat-square&logo=linkedin&logoColor=white"></a>
 </p>

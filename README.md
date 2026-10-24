@@ -19,41 +19,18 @@
   <tr>
     <td width="50%" valign="top">
       <h3>Experience</h3>
-      <table>
-        <tr>
-          <td width="48" align="center"><img src="assets/logos/coindcx.png" width="36" height="36" alt="CoinDCX"></td>
-          <td><b>Software Engineer</b><br>CoinDCX<br><sub>Jul 2026 – Present · Bengaluru</sub></td>
-        </tr>
-        <tr>
-          <td width="48" align="center"><img src="assets/logos/eightfold.png" width="36" height="36" alt="Eightfold AI"></td>
-          <td><b>Engineering Intern</b><br>Eightfold AI<br><sub>Jan – Jul 2026 · 7 mos · Noida</sub></td>
-        </tr>
-        <tr>
-          <td width="48" align="center"><img src="assets/logos/machaxi.png" width="36" height="36" alt="Machaxi"></td>
-          <td><b>Backend Developer Intern</b><br>Machaxi<br><sub>Sep – Dec 2025 · 4 mos · Bengaluru</sub></td>
-        </tr>
-        <tr>
-          <td width="48" align="center"><img src="assets/logos/iitjobs.png" width="36" height="36" alt="iitjobs, Inc."></td>
-          <td><b>Summer Intern</b><br>iitjobs, Inc.<br><sub>May – Jul 2024 · 3 mos · Nagpur</sub></td>
-        </tr>
-      </table>
+      <p><img src="assets/logos/coindcx.png" width="40" height="40" align="left" alt="CoinDCX">&nbsp;<b>Software Engineer</b> · CoinDCX<br>&nbsp;<sub>Jul 2026 – Present · Bengaluru</sub></p>
+      <p><img src="assets/logos/eightfold.png" width="40" height="40" align="left" alt="Eightfold AI">&nbsp;<b>Engineering Intern</b> · Eightfold AI<br>&nbsp;<sub>Jan – Jul 2026 · 7 mos · Noida</sub></p>
+      <p><img src="assets/logos/machaxi.png" width="40" height="40" align="left" alt="Machaxi">&nbsp;<b>Backend Developer Intern</b> · Machaxi<br>&nbsp;<sub>Sep – Dec 2025 · 4 mos · Bengaluru</sub></p>
+      <p><img src="assets/logos/iitjobs.png" width="40" height="40" align="left" alt="iitjobs, Inc.">&nbsp;<b>Summer Intern</b> · iitjobs, Inc.<br>&nbsp;<sub>May – Jul 2024 · 3 mos · Nagpur</sub></p>
+      <img src="assets/spacer.png" width="1000" height="1" alt="">
     </td>
     <td width="50%" valign="top">
       <h3>Certifications</h3>
-      <table>
-        <tr>
-          <td width="48" align="center"><a href="https://www.credly.com/badges/aad8208f-2848-41b6-a056-3de99e0a979a/public_url"><img src="assets/logos/mongodb.png" width="36" height="36" alt="MongoDB"></a></td>
-          <td><b><a href="https://www.credly.com/badges/aad8208f-2848-41b6-a056-3de99e0a979a/public_url">MongoDB Associate Data Modeler</a></b><br><sub>Certified · MongoDB · Jul 2025</sub></td>
-        </tr>
-        <tr>
-          <td width="48" align="center"><a href="https://www.salesforce.com/trailblazer/pratimesh"><img src="assets/logos/salesforce.svg" width="36" height="36" alt="Salesforce"></a></td>
-          <td><b><a href="https://www.salesforce.com/trailblazer/pratimesh">Agentforce Specialist</a></b><br><sub>Certified · Salesforce · Jan 2025</sub></td>
-        </tr>
-        <tr>
-          <td width="48" align="center"><a href="https://www.salesforce.com/trailblazer/pratimesh"><img src="assets/logos/salesforce.svg" width="36" height="36" alt="Salesforce"></a></td>
-          <td><b><a href="https://www.salesforce.com/trailblazer/pratimesh">AI Associate</a></b><br><sub>Certified · Salesforce · Jan 2025</sub></td>
-        </tr>
-      </table>
+      <p><a href="https://www.credly.com/badges/aad8208f-2848-41b6-a056-3de99e0a979a/public_url"><img src="assets/logos/mongodb.png" width="40" height="40" align="left" alt="MongoDB"></a>&nbsp;<b><a href="https://www.credly.com/badges/aad8208f-2848-41b6-a056-3de99e0a979a/public_url">MongoDB Associate Data Modeler</a></b><br>&nbsp;<sub>Certified · MongoDB · Jul 2025</sub></p>
+      <p><a href="https://www.salesforce.com/trailblazer/pratimesh"><img src="assets/logos/salesforce.svg" width="40" height="40" align="left" alt="Salesforce"></a>&nbsp;<b><a href="https://www.salesforce.com/trailblazer/pratimesh">Agentforce Specialist</a></b><br>&nbsp;<sub>Certified · Salesforce · Jan 2025</sub></p>
+      <p><a href="https://www.salesforce.com/trailblazer/pratimesh"><img src="assets/logos/salesforce.svg" width="40" height="40" align="left" alt="Salesforce"></a>&nbsp;<b><a href="https://www.salesforce.com/trailblazer/pratimesh">AI Associate</a></b><br>&nbsp;<sub>Certified · Salesforce · Jan 2025</sub></p>
+      <img src="assets/spacer.png" width="1000" height="1" alt="">
     </td>
   </tr>
 </table>
@@ -86,17 +63,19 @@
 
 <table>
   <tr>
-    <td width="60%" valign="top">
+    <td width="50%" valign="top">
       <h3>Repos</h3>
       <a href="https://github.com/PratimeshTiwari/Agent-CLI"><b>Agent CLI</b></a> · coding agent for the terminal, no API key<br>
       <a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate"><b>Agentic Interview Mate</b></a> · AI interviewer on Cloudflare<br>
       <a href="https://github.com/PratimeshTiwari/AI-Interview-Agent"><b>AI-Interview-Agent</b></a> · the first version, Next.js<br>
       <a href="https://github.com/PratimeshTiwari/rssaggregator"><b>rssaggregator</b></a> · Go, Postgres<br>
       <a href="https://github.com/PratimeshTiwari/pipeline-builder"><b>pipeline-builder</b></a>
+      <img src="assets/spacer.png" width="1000" height="1" alt="">
     </td>
-    <td width="40%" valign="top">
+    <td width="50%" valign="top">
       <h3>Toolbox</h3>
-      <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,go,java,spring,py,cpp,postgres,mysql,mongodb,docker,cloudflare,git&perline=5" alt="TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%">
+      <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,go,java,spring,py,cpp,postgres,mysql,mongodb,docker,cloudflare,git&perline=8" alt="TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%">
+      <img src="assets/spacer.png" width="1000" height="1" alt="">
     </td>
   </tr>
 </table>

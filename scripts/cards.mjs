@@ -100,7 +100,7 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   // Certifications: one small card each, so each keeps its own link.
   for (const [id, img, l1, l2, meta] of CERTS) {
     writeFileSync(`${OUT}/cert-${id}-${name}.svg`, svg(326, 118, t, `
-  ${monoIcon(img.startsWith('mongodb') ? 'mongodb' : 'salesforce', 22, 22, 44, t)}
+  <g transform="translate(26 30) scale(1.5)"><path d="${readFileSync(`${SRC}/mono-${img.startsWith('mongodb') ? 'mongodb' : 'salesforce'}.svg`, 'utf8').match(/<path d="([^"]+)"/)[1]}" fill="${t.text}"/></g>
   <text x="80" y="40" font-size="14.5" font-weight="600" fill="${t.text}">${esc(l1)}</text>
   ${l2 ? `<text x="80" y="60" font-size="14.5" font-weight="600" fill="${t.text}">${esc(l2)}</text>` : ''}
   <text x="80" y="${l2 ? 82 : 62}" font-size="12.5" fill="${t.muted}">Certified · ${esc(meta)}</text>
@@ -120,14 +120,15 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   // Hackathons, as two cards: the win (no link — there is no repo for it),
   // then SIH with the advisor chat, which links to its repo.
   const gold = name === 'dark' ? '#e3b341' : '#9a6700';
-  writeFileSync(`${OUT}/hackathon-win-${name}.svg`, svg(1000, 138, t, `
-  ${label(28, 40, 'Hackathons', t)}
-  <rect x="28" y="56" width="944" height="64" rx="8" fill="${gold}" fill-opacity="0.07" stroke="${gold}" stroke-opacity="0.35"/>
+  // Centered — there is no screenshot to balance it — and plain: the only
+  // colour is the pill.
+  writeFileSync(`${OUT}/hackathon-win-${name}.svg`, svg(1000, 126, t, `
+  ${label(28, 36, 'Hackathons', t)}
   <g transform="translate(500 0)">
-    <rect x="-262" y="66" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
-    <text x="-227" y="81" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
-    <text x="-180" y="83" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon <tspan font-weight="400" fill="${t.muted}">· May 2026</tspan></text>
-    <text x="0" y="108" text-anchor="middle" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
+    <rect x="-262" y="54" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
+    <text x="-227" y="69" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
+    <text x="-180" y="71" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon <tspan font-weight="400" fill="${t.muted}">· May 2026</tspan></text>
+    <text x="0" y="100" text-anchor="middle" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
   </g>`, 'Winner, Eightfold.ai Internal T2 Hackathon, May 2026'));
 
   const sm = wrap('Built Skill-Pilot, a career counselling portal for school students. It uses the Gemini API to choose each next question from what the student has told it so far, evaluates their answers, and suggests career paths with a roadmap, in their own language.', 13.5, 560);

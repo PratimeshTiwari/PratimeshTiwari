@@ -58,23 +58,36 @@
       <sub>TypeScript · Cloudflare Workers · Durable Objects · Workflows · Workers AI · Vectorize</sub>
     </td>
   </tr>
+  <tr>
+    <td colspan="2" valign="top">
+      <a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/sih2024.jpg" alt="Skill-Pilot: the career advisor chat building a roadmap for a 12th-class arts student" width="55%" align="right"></a>
+      <h3><a href="https://github.com/PratimeshTiwari/SIH2024">Skill-Pilot</a></h3>
+      <b>Smart India Hackathon 2024</b> · Career Counselling Portal
+      <br><br>
+      An AI career advisor for school students. A guided chat works out where a student is — class,
+      stream, interests — and builds a career roadmap in their own language, alongside mentorship,
+      workshops and a community.
+      <br><br>
+      <sub>JavaScript · React · Node.js · AI career guidance · multilingual</sub>
+    </td>
+  </tr>
 </table>
-
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <h3>Repos</h3>
-      <a href="https://github.com/PratimeshTiwari/Agent-CLI"><b>Agent CLI</b></a> · coding agent for the terminal, no API key<br>
-      <a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate"><b>Agentic Interview Mate</b></a> · AI interviewer on Cloudflare<br>
-      <a href="https://github.com/PratimeshTiwari/AI-Interview-Agent"><b>AI-Interview-Agent</b></a> · the first version, Next.js<br>
-      <a href="https://github.com/PratimeshTiwari/rssaggregator"><b>rssaggregator</b></a> · Go, Postgres<br>
-      <a href="https://github.com/PratimeshTiwari/pipeline-builder"><b>pipeline-builder</b></a>
+      <p><a href="https://github.com/PratimeshTiwari/Agent-CLI"><img src="assets/icons/nodejs.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/Agent-CLI">Agent CLI</a></b><br>&nbsp;<sub>coding agent for the terminal, no API key</sub></p>
+      <p><a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate"><img src="assets/icons/cloudflare.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate">Agentic Interview Mate</a></b><br>&nbsp;<sub>AI interviewer on Cloudflare</sub></p>
+      <p><a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/icons/react.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/SIH2024">Skill-Pilot</a></b><br>&nbsp;<sub>SIH 2024 · career counselling portal</sub></p>
+      <p><a href="https://github.com/PratimeshTiwari/AI-Interview-Agent"><img src="assets/icons/nextjs.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/AI-Interview-Agent">AI-Interview-Agent</a></b><br>&nbsp;<sub>the first version, Next.js</sub></p>
+      <p><a href="https://github.com/PratimeshTiwari/rssaggregator"><img src="assets/icons/go.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/rssaggregator">rssaggregator</a></b><br>&nbsp;<sub>concurrent RSS aggregator · Go, Postgres</sub></p>
+      <p><a href="https://github.com/PratimeshTiwari/pipeline-builder"><img src="assets/icons/react.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/pipeline-builder">pipeline-builder</a></b><br>&nbsp;<sub>visual pipeline builder with an AI assistant</sub></p>
       <img src="assets/spacer.png" width="1000" height="1" alt="">
     </td>
     <td width="50%" valign="top">
       <h3>Toolbox</h3>
-      <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,go,java,spring,py,cpp,postgres,mysql,mongodb,docker,cloudflare,git&perline=8" alt="TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%">
+      <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,go,java,spring,py,cpp,postgres,mysql,mongodb,docker,cloudflare,git&perline=4" alt="TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%">
       <img src="assets/spacer.png" width="1000" height="1" alt="">
     </td>
   </tr>

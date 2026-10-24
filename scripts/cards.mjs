@@ -34,7 +34,8 @@ const picture = (file, x, y, w, h, r = 8) => {
   return `<clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}"/></clipPath>
   <image href="${data(file)}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMin slice" clip-path="url(#${id})"/>`;
 };
-const logo = (file, x, y, s, t) => `<rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.tile}" stroke="${t.border}"/>
+// Dark tiles with the same border as the link buttons, not white squares.
+const logo = (file, x, y, s, t) => `<rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.pill}" stroke="${t.border}"/>
   <image href="${data(file)}" x="${x + 5}" y="${y + 5}" width="${s - 10}" height="${s - 10}" preserveAspectRatio="xMidYMid meet"/>`;
 const pills = (x, y, tags, t) => {
   let cx = x; return tags.map((tag) => {
@@ -76,7 +77,12 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   const rows = EXPERIENCE.map(([img, title, co, kind, when, where], i) => {
     const y = 50 + i * rowH;
     return `${i ? `<line x1="28" y1="${y - 6}" x2="972" y2="${y - 6}" stroke="${t.track}"/>` : ''}
-  ${logo(img, 28, y + 4, 42, t)}
+  ${img === 'coindcx.png'
+    // Its icon is a white disc, which sits badly on a dark tile; the wordmark
+    // reads the way CoinDCX's own badge does.
+    ? `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="${t.pill}" stroke="${t.border}"/>
+  <text x="49" y="${y + 29}" text-anchor="middle" font-size="10.5" font-weight="700" fill="${t.text}">Coin<tspan fill="#ff6a1a">DCX</tspan></text>`
+    : logo(img, 28, y + 4, 42, t)}
   <text x="86" y="${y + 22}" font-size="15" font-weight="600" fill="${t.text}">${esc(title)} <tspan font-weight="400" fill="${t.muted}">· ${esc(co)}</tspan></text>
   <text x="86" y="${y + 42}" font-size="12.5" fill="${t.muted}">${esc(kind)}</text>
   <text x="972" y="${y + 22}" text-anchor="end" font-size="13" fill="${t.text}">${esc(when)}</text>

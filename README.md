@@ -8,7 +8,6 @@
 <p align="center">
   <a href="https://pratimeshtiwari.com"><img src="https://img.shields.io/badge/Website-0b5fff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
   <a href="https://www.linkedin.com/in/pratimeshtiwari/"><img src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://twitter.com/_pratimesh"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"></a>
   <a href="mailto:pratimesh2004@gmail.com"><img src="https://img.shields.io/badge/Email-ea4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
   <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://img.shields.io/badge/LeetCode-ffa116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"></a>
 </p>
@@ -73,27 +72,18 @@
   </tr>
 </table>
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Repos</h3>
-      <p><a href="https://github.com/PratimeshTiwari/Agent-CLI"><img src="assets/icons/nodejs.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/Agent-CLI">Agent CLI</a></b><br>&nbsp;<sub>coding agent for the terminal, no API key</sub></p>
-      <p><a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate"><img src="assets/icons/cloudflare.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate">Agentic Interview Mate</a></b><br>&nbsp;<sub>AI interviewer on Cloudflare</sub></p>
-      <p><a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/icons/react.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/SIH2024">Skill-Pilot</a></b><br>&nbsp;<sub>SIH 2024 · career counselling portal</sub></p>
-      <p><a href="https://github.com/PratimeshTiwari/AI-Interview-Agent"><img src="assets/icons/nextjs.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/AI-Interview-Agent">AI-Interview-Agent</a></b><br>&nbsp;<sub>the first version, Next.js</sub></p>
-      <p><a href="https://github.com/PratimeshTiwari/rssaggregator"><img src="assets/icons/go.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/rssaggregator">rssaggregator</a></b><br>&nbsp;<sub>concurrent RSS aggregator · Go, Postgres</sub></p>
-      <p><a href="https://github.com/PratimeshTiwari/pipeline-builder"><img src="assets/icons/react.svg" width="36" height="36" align="left" alt=""></a>&nbsp;<b><a href="https://github.com/PratimeshTiwari/pipeline-builder">pipeline-builder</a></b><br>&nbsp;<sub>visual pipeline builder with an AI assistant</sub></p>
-      <img src="assets/spacer.png" width="1000" height="1" alt="">
-    </td>
-    <td width="50%" valign="top">
-      <h3>Toolbox</h3>
-      <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,go,java,spring,py,cpp,postgres,mysql,mongodb,docker,cloudflare,git&perline=4" alt="TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%">
-      <img src="assets/spacer.png" width="1000" height="1" alt="">
-    </td>
-  </tr>
-</table>
+### Toolbox
 
-<p>
-  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://leetcard.jacoblin.cool/pratimeshtiwari?theme=dark&font=Inter&animation=false&ext=contest" alt="LeetCode: problems solved and contest rating" width="49%"></a>
-  <a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-card.svg" alt="GitHub: contributions, languages, commits, repos and activity" width="49%"></a>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,go,java,spring,py,cpp,postgres,mysql,mongodb,docker,cloudflare,git&perline=15" alt="TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%">
 </p>
+
+<a href="https://leetcode.com/u/pratimeshtiwari/"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/leetcode-dark.svg">
+  <img src="assets/leetcode-light.svg" alt="LeetCode: problems solved, contest rating and rating across contests" width="100%">
+</picture></a>
+
+<a href="https://github.com/PratimeshTiwari?tab=repositories"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/github-dark.svg">
+  <img src="assets/github-light.svg" alt="GitHub: contributions, commits, languages and contributions since 2022" width="100%">
+</picture></a>

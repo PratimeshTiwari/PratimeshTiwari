@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="150" viewBox="0 0 1000 150" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>LeetCode</title>
+  <rect x="0.5" y="0.5" width="999" height="149" rx="10" fill="none" stroke="#d0d7de"/>
+
+  <g transform="translate(28 24) scale(1.1)" fill="#e8890c"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></g>
+  <text x="28" y="80" font-size="15" font-weight="600" fill="#1f2328">LeetCode</text>
+  <text x="28" y="100" font-size="12" fill="#656d76">pratimeshtiwari</text>
+  <line x1="125" y1="24" x2="125" y2="126" stroke="#d0d7de"/>
+  <line x1="455" y1="24" x2="455" y2="126" stroke="#d0d7de"/>
+  <line x1="630" y1="24" x2="630" y2="126" stroke="#d0d7de"/>
+  
+  <text x="160" y="78" font-size="28" font-weight="600" fill="#1f2328">668</text>
+  <text x="160" y="100" font-size="12" fill="#656d76">solved</text>
+  
+  <text x="280" y="78" font-size="28" font-weight="600" fill="#1f2328">1856</text>
+  <text x="280" y="100" font-size="12" fill="#656d76">rating</text>
+  <text x="280" y="118" font-size="12" fill="#656d76">top 6.28%</text>
+  
+  <text x="392" y="78" font-size="28" font-weight="600" fill="#1f2328">17</text>
+  <text x="392" y="100" font-size="12" fill="#656d76">contests</text>
+  
+  <text x="475" y="48" font-size="13" fill="#1f2328">Easy</text>
+  <text x="615" y="48" text-anchor="end" font-size="12" fill="#656d76">209 / 972</text>
+  <rect x="475" y="55" width="140" height="4" rx="2" fill="#eaeef2"/>
+  <rect x="475" y="55" width="30.1" height="4" rx="2" fill="#00b8a3"/>
+  <text x="475" y="82" font-size="13" fill="#1f2328">Medium</text>
+  <text x="615" y="82" text-anchor="end" font-size="12" fill="#656d76">382 / 2,131</text>
+  <rect x="475" y="89" width="140" height="4" rx="2" fill="#eaeef2"/>
+  <rect x="475" y="89" width="25.1" height="4" rx="2" fill="#ffc01e"/>
+  <text x="475" y="116" font-size="13" fill="#1f2328">Hard</text>
+  <text x="615" y="116" text-anchor="end" font-size="12" fill="#656d76">77 / 984</text>
+  <rect x="475" y="123" width="140" height="4" rx="2" fill="#eaeef2"/>
+  <rect x="475" y="123" width="11.0" height="4" rx="2" fill="#ef4743"/>
+  
+  <text x="645" y="36" font-size="12" fill="#656d76">Rating</text>
+  <text x="800" y="36" text-anchor="end" font-size="12" fill="#1f2328">1856</text>
+  <line x1="679" y1="50" x2="800" y2="50" stroke="#eaeef2"/>
+  <line x1="679" y1="118" x2="800" y2="118" stroke="#d0d7de"/>
+  <text x="674" y="54" text-anchor="end" font-size="10" fill="#656d76">1,856</text>
+  <text x="674" y="121" text-anchor="end" font-size="10" fill="#656d76">1,507</text>
+  <path d="M679.0,118.0 L686.6,116.6 L694.1,104.0 L701.7,103.6 L709.3,103.4 L716.8,105.6 L724.4,107.4 L731.9,105.6 L739.5,108.9 L747.1,113.0 L754.6,100.3 L762.2,97.3 L769.8,94.0 L777.3,87.1 L784.9,71.2 L792.4,55.7 L800.0,50.0 L800,118 L679,118 Z" fill="#e8890c" fill-opacity="0.1"/>
+  <path d="M679.0,118.0 L686.6,116.6 L694.1,104.0 L701.7,103.6 L709.3,103.4 L716.8,105.6 L724.4,107.4 L731.9,105.6 L739.5,108.9 L747.1,113.0 L754.6,100.3 L762.2,97.3 L769.8,94.0 L777.3,87.1 L784.9,71.2 L792.4,55.7 L800.0,50.0" fill="none" stroke="#e8890c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="800.0" cy="50.0" r="3" fill="#e8890c"/>
+  <text x="679" y="133" font-size="10" fill="#656d76">2024</text>
+  <text x="800" y="133" text-anchor="end" font-size="10" fill="#656d76">2025</text>
+  
+  <line x1="812" y1="24" x2="812" y2="126" stroke="#d0d7de"/>
+  
+  <text x="818" y="36" font-size="12" fill="#656d76">Submissions</text>
+  <text x="972" y="36" text-anchor="end" font-size="12" fill="#1f2328">3,526</text>
+  <line x1="852" y1="50" x2="972" y2="50" stroke="#eaeef2"/>
+  <line x1="852" y1="118" x2="972" y2="118" stroke="#d0d7de"/>
+  <text x="847" y="54" text-anchor="end" font-size="10" fill="#656d76">3,526</text>
+  <text x="847" y="121" text-anchor="end" font-size="10" fill="#656d76">0</text>
+  <path d="M852.0,118.0 L854.7,118.0 L857.3,118.0 L860.0,118.0 L862.7,118.0 L865.3,118.0 L868.0,118.0 L870.7,117.5 L873.3,117.1 L876.0,116.6 L878.7,116.6 L881.3,116.6 L884.0,115.8 L886.7,115.3 L889.3,114.9 L892.0,111.0 L894.7,110.5 L897.3,104.8 L900.0,96.3 L902.7,90.3 L905.3,87.1 L908.0,83.8 L910.7,80.1 L913.3,78.9 L916.0,74.8 L918.7,71.1 L921.3,69.6 L924.0,68.2 L926.7,65.4 L929.3,61.4 L932.0,60.1 L934.7,58.3 L937.3,57.3 L940.0,55.4 L942.7,54.5 L945.3,54.2 L948.0,53.8 L950.7,53.6 L953.3,53.5 L956.0,53.4 L958.7,53.2 L961.3,52.6 L964.0,51.1 L966.7,50.8 L969.3,50.4 L972.0,50.0 L972,118 L852,118 Z" fill="#e8890c" fill-opacity="0.1"/>
+  <path d="M852.0,118.0 L854.7,118.0 L857.3,118.0 L860.0,118.0 L862.7,118.0 L865.3,118.0 L868.0,118.0 L870.7,117.5 L873.3,117.1 L876.0,116.6 L878.7,116.6 L881.3,116.6 L884.0,115.8 L886.7,115.3 L889.3,114.9 L892.0,111.0 L894.7,110.5 L897.3,104.8 L900.0,96.3 L902.7,90.3 L905.3,87.1 L908.0,83.8 L910.7,80.1 L913.3,78.9 L916.0,74.8 L918.7,71.1 L921.3,69.6 L924.0,68.2 L926.7,65.4 L929.3,61.4 L932.0,60.1 L934.7,58.3 L937.3,57.3 L940.0,55.4 L942.7,54.5 L945.3,54.2 L948.0,53.8 L950.7,53.6 L953.3,53.5 L956.0,53.4 L958.7,53.2 L961.3,52.6 L964.0,51.1 L966.7,50.8 L969.3,50.4 L972.0,50.0" fill="none" stroke="#e8890c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="972.0" cy="50.0" r="3" fill="#e8890c"/>
+  <text x="852" y="133" font-size="10" fill="#656d76">2023</text>
+  <text x="972" y="133" text-anchor="end" font-size="10" fill="#656d76">2026</text>
+  
+</svg>

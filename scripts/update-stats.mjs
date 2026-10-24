@@ -1,7 +1,7 @@
-// Draws the README's two stat sections — LeetCode and GitHub — each in a
-// light and a dark version (the README picks one with <picture>). Data comes
-// straight from LeetCode's and GitHub's own APIs. Run daily by
-// .github/workflows/stats.yml; node 20+, no dependencies.
+// Draws the README's LeetCode and GitHub sections from LeetCode's and GitHub's
+// own APIs. Each card has its own solid background, so it reads the same on a
+// light or a dark GitHub page (<picture> follows the OS setting, not GitHub's
+// theme). Run daily by .github/workflows/stats.yml; node 20+, no dependencies.
 //   GITHUB_TOKEN=$(gh auth token) node scripts/update-stats.mjs
 import { writeFileSync, mkdirSync } from 'node:fs';
 
@@ -67,8 +67,8 @@ let run = 0; const cumulative = months.map((_, i) => (run += monthly.user[`m${i}
 
 // ── drawing ──
 const THEMES = {
-  light: { text: '#1f2328', muted: '#656d76', border: '#d0d7de', track: '#eaeef2', green: '#1a7f37', orange: '#e8890c' },
-  dark: { text: '#e6edf3', muted: '#8d96a0', border: '#30363d', track: '#21262d', green: '#3fb950', orange: '#ffa116' },
+  light: { bg: '#ffffff', text: '#1f2328', muted: '#656d76', border: '#d0d7de', track: '#eaeef2', green: '#1a7f37', orange: '#e8890c' },
+  dark: { bg: '#0d1117', text: '#e6edf3', muted: '#8d96a0', border: '#30363d', track: '#21262d', green: '#3fb950', orange: '#ffa116' },
 };
 const W = 1000; const H = 150;
 const fmt = (n) => Number(n).toLocaleString('en-US');
@@ -82,7 +82,7 @@ const spark = (values, x0, x1, y0, y1, color) => {
 };
 const frame = (t, body, title) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
   <title>${title}</title>
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="10" fill="none" stroke="${t.border}"/>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="10" fill="${t.bg}" stroke="${t.border}"/>
 ${body}
 </svg>
 `;
@@ -93,7 +93,7 @@ const stat = (t, x, value, label, sub) => `
 const LC_ICON = 'M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z';
 const GH_ICON = 'M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z';
 
-for (const [name, t] of Object.entries(THEMES)) {
+for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   // Shared columns, so the two strips line up: numbers | rows | graph(s).
   const D1 = 455; const RX = 475; const RW = 140; const D2 = 630;
   const big = (x, value, label, sub) => `

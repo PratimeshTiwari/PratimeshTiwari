@@ -41,6 +41,21 @@ const { user } = await graphql(`query {
     }
   }
 }`);
+// Monthly contribution totals since the account was created, one aliased
+// query (contributionsCollection takes at most a year per call; a month each).
+const months = [];
+for (let d = new Date(Date.UTC(new Date(user.createdAt).getUTCFullYear(), 0, 1)); d < new Date(); d.setUTCMonth(d.getUTCMonth() + 1)) {
+  months.push(new Date(d));
+}
+const monthly = await graphql(`query { user(login: "${USER}") { ${months.map((m, i) => {
+  const end = new Date(Date.UTC(m.getUTCFullYear(), m.getUTCMonth() + 1, 1) - 1000);
+  return `m${i}: contributionsCollection(from: "${m.toISOString()}", to: "${end.toISOString()}") { contributionCalendar { totalContributions } }`;
+}).join(' ')} } }`);
+// A running total: one busy month no longer flattens every other one, and the
+// line reads the way the LeetCode card's rating line does.
+let running = 0;
+const series = months.map((m, i) => ({ when: m, n: (running += monthly.user[`m${i}`].contributionCalendar.totalContributions) }));
+
 const commits = (await rest(`/search/commits?q=author:${USER}&per_page=1`)).total_count;
 
 const repos = user.repositories.nodes;
@@ -59,11 +74,9 @@ const languages = [...bytes.entries()].sort((a, b) => b[1].size - a[1].size).sli
 const cal = user.contributionsCollection.contributionCalendar;
 const days = cal.weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount));
 const activeDays = days.filter((n) => n > 0).length;
-const weeks = cal.weeks.slice(-36);
 
 // ── Drawing ──────────────────────────────────────────────────────────
 const C = { bg: '#101010', border: '#404040', track: '#404040', text: '#f0f0f0', muted: '#9a9a9a', accent: '#39d353' };
-const GREENS = ['#1e1e1e', '#0e4429', '#006d32', '#26a641', '#39d353'];
 const esc = (s) => String(s).replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c]);
 const fmt = (n) => Number(n).toLocaleString('en-US');
 
@@ -94,11 +107,30 @@ const figures = [['Commits', fmt(commits)], ['Public repos', fmt(user.repositori
   <text x="${x}" y="275" font-size="26" fill="${C.text}">${value}</text>`;
   }).join('');
 
-// Heatmap: the last 36 weeks, quartiles of the busiest day.
-const peak = Math.max(1, ...weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount)));
-const level = (n) => (n === 0 ? 0 : Math.min(4, Math.ceil((n / peak) * 4)));
-const heat = weeks.map((w, wi) => w.contributionDays.map((d, di) =>
-  `<rect x="${(25 + wi * 12.6).toFixed(1)}" y="${300 + di * 12.6}" width="10" height="10" rx="2" fill="${GREENS[level(d.contributionCount)]}"/>`).join('')).join('');
+// Total contributions since the account began, drawn like the LeetCode
+// card's rating graph: three gridlines, a line, a faint fill, year labels.
+const X0 = 58; const X1 = 475; const Y0 = 318; const Y1 = 372;
+const top = Math.max(10, ...series.map((p) => p.n));
+const step = Math.pow(10, Math.floor(Math.log10(top)));
+const ceil = Math.ceil(top / step) * step;
+const px = (i) => X0 + ((X1 - X0) * i) / Math.max(1, series.length - 1);
+const py = (n) => Y1 - ((Y1 - Y0) * n) / ceil;
+const line = series.map((p, i) => `${i ? 'L' : 'M'}${px(i).toFixed(1)},${py(p.n).toFixed(1)}`).join(' ');
+const area = `${line} L${px(series.length - 1).toFixed(1)},${Y1} L${X0},${Y1} Z`;
+const grid = [0, 0.5, 1].map((f) => {
+  const y = Y1 - (Y1 - Y0) * f;
+  return `<line x1="${X0}" y1="${y}" x2="${X1}" y2="${y}" stroke="#2a2a2a"/>
+  <text x="${X0 - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="${C.muted}">${Math.round(ceil * f)}</text>`;
+}).join('\n  ');
+const years = series.map((p, i) => [p, i]).filter(([p]) => p.when.getUTCMonth() === 0)
+  .map(([p, i]) => `<text x="${px(i).toFixed(1)}" y="390" text-anchor="middle" font-size="11" fill="${C.muted}">${p.when.getUTCFullYear()}</text>`).join('');
+const chart = `
+  <text x="25" y="303" font-size="12" fill="${C.muted}">Contributions since ${series[0].when.getUTCFullYear()}</text>
+  <text x="475" y="303" text-anchor="end" font-size="12" fill="${C.text}">${fmt(running)}</text>
+  ${grid}
+  <path d="${area}" fill="${C.accent}" fill-opacity="0.12"/>
+  <path d="${line}" fill="none" stroke="${C.accent}" stroke-width="2" stroke-linejoin="round"/>
+  ${years}`;
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
   <title>${USER} | GitHub</title>
@@ -112,7 +144,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" vi
   ${bars}
   <line x1="12" y1="220" x2="488" y2="220" stroke="${C.border}"/>
   ${figures}
-  ${heat}
+  ${chart}
 </svg>
 `;
 

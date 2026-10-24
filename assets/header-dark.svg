@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="168" viewBox="0 0 1000 168" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Pratimesh Tiwari — Agentic AI &amp; Backend Engineer</title>
+  <rect x="0.5" y="0.5" width="999" height="167" rx="10" fill="#0d1117" stroke="#30363d"/>
+
+  <text x="500" y="66" text-anchor="middle" font-size="40" font-weight="700" fill="#e6edf3">Pratimesh Tiwari</text>
+  <rect x="470" y="84" width="60" height="3" rx="1.5" fill="#4493f8"/>
+  <text x="500" y="116" text-anchor="middle" font-size="17" font-weight="600" fill="#e6edf3">Agentic AI &amp; Backend Engineer <tspan font-weight="400" fill="#8d96a0">· Bengaluru, India</tspan></text>
+  <text x="500" y="142" text-anchor="middle" font-size="14.5" fill="#8d96a0">I build AI agents, developer tools and the backends they run on.</text>
+</svg>

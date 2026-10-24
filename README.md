@@ -1,9 +1,4 @@
-<h1 align="center">Pratimesh Tiwari</h1>
-
-<p align="center">
-  <b>Agentic AI &amp; Backend Engineer</b> · Bengaluru, India<br>
-  I build AI agents, developer tools and the backends they run on.
-</p>
+<p align="center"><img src="assets/header-dark.svg" alt="Pratimesh Tiwari — Agentic AI &amp; Backend Engineer, Bengaluru, India. I build AI agents, developer tools and the backends they run on." width="100%"></p>
 
 <p align="center">
   <a href="https://pratimeshtiwari.com"><img src="https://img.shields.io/badge/Website-0b5fff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>

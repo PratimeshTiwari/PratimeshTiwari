@@ -63,6 +63,14 @@ const ICONS = ['ts', 'js', 'nodejs', 'react', 'go', 'java', 'spring', 'py', 'cpp
 
 for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   clipId = 0;
+  // Header: name, a short accent rule, headline and intro.
+  writeFileSync(`${OUT}/header-${name}.svg`, svg(1000, 168, t, `
+  <text x="500" y="66" text-anchor="middle" font-size="40" font-weight="700" fill="${t.text}">Pratimesh Tiwari</text>
+  <rect x="470" y="84" width="60" height="3" rx="1.5" fill="${t.accent}"/>
+  <text x="500" y="116" text-anchor="middle" font-size="17" font-weight="600" fill="${t.text}">Agentic AI &amp; Backend Engineer <tspan font-weight="400" fill="${t.muted}">· Bengaluru, India</tspan></text>
+  <text x="500" y="142" text-anchor="middle" font-size="14.5" fill="${t.muted}">I build AI agents, developer tools and the backends they run on.</text>`,
+  'Pratimesh Tiwari — Agentic AI & Backend Engineer'));
+
   // Experience: one card, a row per role, dates on the right.
   const rowH = 62; const eh = 58 + EXPERIENCE.length * rowH;
   const rows = EXPERIENCE.map(([img, title, co, kind, when, where], i) => {
@@ -101,11 +109,13 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   const sm = wrap('Built Skill-Pilot, a career counselling portal for school students. It uses the Gemini API to choose each next question from what the student has told it so far, evaluates their answers, and suggests career paths with a roadmap, in their own language.', 13.5, 560);
   writeFileSync(`${OUT}/special-${name}.svg`, svg(1000, 318, t, `
   ${label(28, 40, 'Hackathons', t)}
-  <rect x="28" y="58" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
-  <text x="63" y="73" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
-  <text x="110" y="75" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon</text>
-  <text x="28" y="104" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
-  <text x="972" y="75" text-anchor="end" font-size="13" fill="${t.text}">May 2026</text>
+  <rect x="28" y="54" width="944" height="64" rx="8" fill="${gold}" fill-opacity="0.07" stroke="${gold}" stroke-opacity="0.35"/>
+  <g transform="translate(500 0)">
+    <rect x="-262" y="64" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
+    <text x="-227" y="79" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
+    <text x="-180" y="81" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon <tspan font-weight="400" fill="${t.muted}">· May 2026</tspan></text>
+    <text x="0" y="106" text-anchor="middle" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
+  </g>
   <line x1="28" y1="126" x2="972" y2="126" stroke="${t.track}"/>
   <rect x="28" y="146" width="96" height="22" rx="11" fill="none" stroke="${t.border}"/>
   <text x="76" y="161" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${t.muted}">PARTICIPANT</text>

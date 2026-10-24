@@ -3,11 +3,13 @@
   <rect x="0.5" y="0.5" width="999" height="317" rx="10" fill="#0d1117" stroke="#30363d"/>
 
   <text x="28" y="40" font-size="12" font-weight="600" letter-spacing="1.2" fill="#8d96a0">HACKATHONS</text>
-  <rect x="28" y="58" width="70" height="22" rx="11" fill="none" stroke="#e3b341"/>
-  <text x="63" y="73" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#e3b341">WINNER</text>
-  <text x="110" y="75" font-size="19" font-weight="700" fill="#e6edf3">Eightfold.ai Internal T2 Hackathon</text>
-  <text x="28" y="104" font-size="13.5" fill="#8d96a0">Built a user onboarding demo.</text>
-  <text x="972" y="75" text-anchor="end" font-size="13" fill="#e6edf3">May 2026</text>
+  <rect x="28" y="54" width="944" height="64" rx="8" fill="#e3b341" fill-opacity="0.07" stroke="#e3b341" stroke-opacity="0.35"/>
+  <g transform="translate(500 0)">
+    <rect x="-262" y="64" width="70" height="22" rx="11" fill="none" stroke="#e3b341"/>
+    <text x="-227" y="79" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#e3b341">WINNER</text>
+    <text x="-180" y="81" font-size="19" font-weight="700" fill="#e6edf3">Eightfold.ai Internal T2 Hackathon <tspan font-weight="400" fill="#8d96a0">· May 2026</tspan></text>
+    <text x="0" y="106" text-anchor="middle" font-size="13.5" fill="#8d96a0">Built a user onboarding demo.</text>
+  </g>
   <line x1="28" y1="126" x2="972" y2="126" stroke="#21262d"/>
   <rect x="28" y="146" width="96" height="22" rx="11" fill="none" stroke="#30363d"/>
   <text x="76" y="161" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#8d96a0">PARTICIPANT</text>

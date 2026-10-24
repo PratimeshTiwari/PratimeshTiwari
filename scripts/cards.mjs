@@ -34,6 +34,13 @@ const picture = (file, x, y, w, h, r = 8) => {
   return `<clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}"/></clipPath>
   <image href="${data(file)}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMin slice" clip-path="url(#${id})"/>`;
 };
+// White single-colour marks on dark tiles, like the toolbox chips. A raster
+// logo is recoloured through a filter that keeps only its alpha.
+const monoLogo = (file, x, y, s, t) => `<filter id="w${x}${y}"><feColorMatrix type="matrix" values="0 0 0 0 0.9  0 0 0 0 0.93  0 0 0 0 0.95  0 0 0 1 0"/></filter>
+  <rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.pill}" stroke="${t.border}"/>
+  <image href="${data(file)}" x="${x + 8}" y="${y + 8}" width="${s - 16}" height="${s - 16}" preserveAspectRatio="xMidYMid meet" filter="url(#w${x}${y})"/>`;
+const monoIcon = (slug, x, y, s, t) => `<rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.pill}" stroke="${t.border}"/>
+  <g transform="translate(${x + (s - 24) / 2} ${y + (s - 24) / 2})"><path d="${readFileSync(`${SRC}/mono-${slug}.svg`, 'utf8').match(/<path d="([^"]+)"/)[1]}" fill="${t.text}"/></g>`;
 // Dark tiles with the same border as the link buttons, not white squares.
 const logo = (file, x, y, s, t) => `<rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.pill}" stroke="${t.border}"/>
   <image href="${data(file)}" x="${x + 5}" y="${y + 5}" width="${s - 10}" height="${s - 10}" preserveAspectRatio="xMidYMid meet"/>`;
@@ -79,11 +86,10 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
     const y = 50 + i * rowH;
     return `${i ? `<line x1="28" y1="${y - 6}" x2="972" y2="${y - 6}" stroke="${t.track}"/>` : ''}
   ${img === 'coindcx.png'
-    // Its icon is a white disc, which sits badly on a dark tile; the wordmark
-    // reads the way CoinDCX's own badge does.
+    // A wordmark, not a mark: drawn small enough to sit inside the tile.
     ? `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="${t.pill}" stroke="${t.border}"/>
-  <text x="49" y="${y + 29}" text-anchor="middle" font-size="10.5" font-weight="700" fill="${t.text}">Coin<tspan fill="#ff6a1a">DCX</tspan></text>`
-    : logo(img, 28, y + 4, 42, img === 'machaxi.png' ? { ...t, pill: '#f6f8fa' } : t)}
+  <text x="49" y="${y + 28}" text-anchor="middle" font-size="8.6" font-weight="700" letter-spacing="-0.1" fill="${t.text}">CoinDCX</text>`
+    : monoLogo(img, 28, y + 4, 42, t)}
   <text x="86" y="${y + 22}" font-size="15" font-weight="600" fill="${t.text}">${esc(title)} <tspan font-weight="400" fill="${t.muted}">· ${esc(co)}</tspan></text>
   <text x="86" y="${y + 42}" font-size="12.5" fill="${t.muted}">${esc(kind)}</text>
   <text x="972" y="${y + 22}" text-anchor="end" font-size="13" fill="${t.text}">${esc(when)}</text>
@@ -94,7 +100,7 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   // Certifications: one small card each, so each keeps its own link.
   for (const [id, img, l1, l2, meta] of CERTS) {
     writeFileSync(`${OUT}/cert-${id}-${name}.svg`, svg(326, 118, t, `
-  ${logo(img, 22, 22, 44, t)}
+  ${monoIcon(img.startsWith('mongodb') ? 'mongodb' : 'salesforce', 22, 22, 44, t)}
   <text x="80" y="40" font-size="14.5" font-weight="600" fill="${t.text}">${esc(l1)}</text>
   ${l2 ? `<text x="80" y="60" font-size="14.5" font-weight="600" fill="${t.text}">${esc(l2)}</text>` : ''}
   <text x="80" y="${l2 ? 82 : 62}" font-size="12.5" fill="${t.muted}">Certified · ${esc(meta)}</text>

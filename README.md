@@ -6,11 +6,11 @@
 </p>
 
 <p align="center">
-  <a href="https://pratimeshtiwari.com"><img src="https://img.shields.io/badge/Website-pratimeshtiwari.com-0b5fff?style=flat-square&logo=googlechrome&logoColor=white"></a>
-  <a href="https://www.linkedin.com/in/pratimeshtiwari/"><img src="https://img.shields.io/badge/LinkedIn-pratimeshtiwari-0a66c2?style=flat-square&logo=linkedin&logoColor=white"></a>
-  <a href="https://twitter.com/_pratimesh"><img src="https://img.shields.io/badge/X-@__pratimesh-000000?style=flat-square&logo=x&logoColor=white"></a>
-  <a href="mailto:pratimesh2004@gmail.com"><img src="https://img.shields.io/badge/Email-pratimesh2004@gmail.com-c14438?style=flat-square&logo=gmail&logoColor=white"></a>
-  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://img.shields.io/badge/LeetCode-pratimeshtiwari-ffa116?style=flat-square&logo=leetcode&logoColor=white"></a>
+  <a href="https://pratimeshtiwari.com"><img src="https://img.shields.io/badge/Website-0b5fff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://www.linkedin.com/in/pratimeshtiwari/"><img src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://twitter.com/_pratimesh"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"></a>
+  <a href="mailto:pratimesh2004@gmail.com"><img src="https://img.shields.io/badge/Email-ea4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://img.shields.io/badge/LeetCode-ffa116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"></a>
 </p>
 
 ---
@@ -64,10 +64,11 @@
       <sub>SPECIAL MENTION</sub>
       <h3>Smart India Hackathon 2024 · Participant</h3>
       Built <b><a href="https://github.com/PratimeshTiwari/SIH2024">Skill-Pilot</a></b>, a career counselling portal for
-      school students: an AI career advisor that builds a career roadmap through a guided chat, in the
-      student's own language, with mentorship and workshops alongside.
+      school students. It uses the <b>Gemini API</b> to choose each next question from what the student has
+      told it so far, evaluates their answers, and suggests career paths with a roadmap, in the student's
+      own language.
       <br><br>
-      <sub>JavaScript · React · Node.js</sub>
+      <sub>JavaScript · React · Node.js · Gemini API</sub>
     </td>
   </tr>
 </table>

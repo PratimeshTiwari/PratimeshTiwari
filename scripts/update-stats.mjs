@@ -3,7 +3,8 @@
 // light or a dark GitHub page (<picture> follows the OS setting, not GitHub's
 // theme). Run daily by .github/workflows/stats.yml; node 20+, no dependencies.
 //   GITHUB_TOKEN=$(gh auth token) node scripts/update-stats.mjs
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const OUT = process.argv[2] || 'assets';
 mkdirSync(OUT, { recursive: true });
@@ -163,3 +164,11 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   writeFileSync(`${OUT}/github-${name}.svg`, frame(t, ghBody, 'GitHub'));
 }
 console.log(`ok: ${solved.All} solved, rating ${Math.round(lc.userContestRanking.rating)}, ${run} contributions`);
+
+// GitHub's image proxy caches by URL, so a redrawn card under the same name can
+// stay stale for hours. Every image in the README carries ?v=<content hash>,
+// which changes exactly when the image does.
+const readme = readFileSync('README.md', 'utf8');
+const stamped = readme.replace(/(src|srcset)="(assets\/[^"?]+\.svg)(\?v=[0-9a-f]+)?"/g, (m, attr, file) =>
+  (existsSync(file) ? `${attr}="${file}?v=${createHash('sha1').update(readFileSync(file)).digest('hex').slice(0, 8)}"` : m));
+if (stamped !== readme) { writeFileSync('README.md', stamped); console.log('README image versions updated'); }

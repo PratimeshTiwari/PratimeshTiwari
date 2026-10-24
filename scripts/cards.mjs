@@ -36,7 +36,10 @@ const picture = (file, x, y, w, h, r = 8) => {
 };
 // White single-colour marks on dark tiles, like the toolbox chips. A raster
 // logo is recoloured through a filter that keeps only its alpha.
-const monoLogo = (file, x, y, s, t) => `<filter id="w${x}${y}"><feColorMatrix type="matrix" values="0 0 0 0 0.9  0 0 0 0 0.93  0 0 0 0 0.95  0 0 0 1 0"/></filter>
+// One colour per mark — the company's own, toned for a dark tile.
+const BRAND = { 'eightfold.png': '#a78bfa', 'machaxi.png': '#60a5fa', 'iitjobs.png': '#94a3b8' };
+const rgb = (hex) => [1, 3, 5].map((i) => (parseInt(hex.slice(i, i + 2), 16) / 255).toFixed(3));
+const monoLogo = (file, x, y, s, t) => `<filter id="w${x}${y}"><feColorMatrix type="matrix" values="${(([r, g, b]) => `0 0 0 0 ${r}  0 0 0 0 ${g}  0 0 0 0 ${b}  0 0 0 1 0`)(rgb(BRAND[file] || '#e6edf3'))}"/></filter>
   <rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.pill}" stroke="${t.border}"/>
   <image href="${data(file)}" x="${x + 8}" y="${y + 8}" width="${s - 16}" height="${s - 16}" preserveAspectRatio="xMidYMid meet" filter="url(#w${x}${y})"/>`;
 const monoIcon = (slug, x, y, s, t) => `<rect x="${x}" y="${y}" width="${s}" height="${s}" rx="8" fill="${t.pill}" stroke="${t.border}"/>
@@ -88,7 +91,7 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   ${img === 'coindcx.png'
     // A wordmark, not a mark: drawn small enough to sit inside the tile.
     ? `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="${t.pill}" stroke="${t.border}"/>
-  <text x="49" y="${y + 28}" text-anchor="middle" font-size="8.6" font-weight="700" letter-spacing="-0.1" fill="${t.text}">CoinDCX</text>`
+  <text x="49" y="${y + 28}" text-anchor="middle" font-size="8.6" font-weight="700" letter-spacing="-0.1" fill="${t.text}">Coin<tspan fill="#ff6a1a">DCX</tspan></text>`
     : monoLogo(img, 28, y + 4, 42, t)}
   <text x="86" y="${y + 22}" font-size="15" font-weight="600" fill="${t.text}">${esc(title)} <tspan font-weight="400" fill="${t.muted}">· ${esc(co)}</tspan></text>
   <text x="86" y="${y + 42}" font-size="12.5" fill="${t.muted}">${esc(kind)}</text>
@@ -100,7 +103,7 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   // Certifications: one small card each, so each keeps its own link.
   for (const [id, img, l1, l2, meta] of CERTS) {
     writeFileSync(`${OUT}/cert-${id}-${name}.svg`, svg(326, 118, t, `
-  <g transform="translate(26 30) scale(1.5)"><path d="${readFileSync(`${SRC}/mono-${img.startsWith('mongodb') ? 'mongodb' : 'salesforce'}.svg`, 'utf8').match(/<path d="([^"]+)"/)[1]}" fill="${t.text}"/></g>
+  <g transform="translate(26 30) scale(1.5)"><path d="${readFileSync(`${SRC}/mono-${img.startsWith('mongodb') ? 'mongodb' : 'salesforce'}.svg`, 'utf8').match(/<path d="([^"]+)"/)[1]}" fill="${img.startsWith('mongodb') ? '#47a248' : '#00a1e0'}"/></g>
   <text x="80" y="40" font-size="14.5" font-weight="600" fill="${t.text}">${esc(l1)}</text>
   ${l2 ? `<text x="80" y="60" font-size="14.5" font-weight="600" fill="${t.text}">${esc(l2)}</text>` : ''}
   <text x="80" y="${l2 ? 82 : 62}" font-size="12.5" fill="${t.muted}">Certified · ${esc(meta)}</text>

@@ -60,6 +60,6 @@
 ### LeetCode
 
 <p>
-  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://leetcard.jacoblin.cool/pratimeshtiwari?theme=dark&font=Inter&ext=contest" alt="LeetCode contest rating" width="49%"></a>
-  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://leetcard.jacoblin.cool/pratimeshtiwari?theme=dark&font=Inter&ext=activity" alt="LeetCode recent questions" width="49%"></a>
+  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://leetcard.jacoblin.cool/pratimeshtiwari?theme=dark&font=Inter&animation=false&ext=contest" alt="LeetCode contest rating" width="49%"></a>
+  <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="https://leetcard.jacoblin.cool/pratimeshtiwari?theme=dark&font=Inter&animation=false&ext=activity" alt="LeetCode recent questions" width="49%"></a>
 </p>

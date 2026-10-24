@@ -7,7 +7,7 @@
   <a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/link-leetcode-dark.svg?v=77b2078c" alt="LeetCode" height="40"></a>
 </p>
 
-<p><a href="https://www.linkedin.com/in/pratimeshtiwari/"><img src="assets/experience-dark.svg?v=0f87deba" alt="Experience: Software Engineer at CoinDCX (Jul 2026 – present); Engineering Intern at Eightfold AI; Backend Developer Intern at Machaxi; Summer Intern at iitjobs" width="100%"></a></p>
+<p><a href="https://www.linkedin.com/in/pratimeshtiwari/"><img src="assets/experience-dark.svg?v=e168cc1c" alt="Experience: Software Engineer at CoinDCX (Jul 2026 – present); Engineering Intern at Eightfold AI; Backend Developer Intern at Machaxi; Summer Intern at iitjobs" width="100%"></a></p>
 
 <p>
   <a href="https://www.credly.com/badges/aad8208f-2848-41b6-a056-3de99e0a979a/public_url"><img src="assets/cert-mongodb-dark.svg?v=d5d52b88" alt="MongoDB Certified Associate Data Modeler" width="32.6%"></a>
@@ -28,4 +28,4 @@
 
 <p><a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/leetcode-dark.svg?v=54a69ed2" alt="LeetCode: problems solved, contest rating, rating and submissions over time" width="100%"></a></p>
 
-<p><a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-dark.svg?v=8a188d9f" alt="GitHub: contributions, repos, PRs, languages and contributions over time" width="100%"></a></p>
+<p><a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-dark.svg?v=0abb52d2" alt="GitHub: contributions, repos, PRs, languages and contributions over time" width="100%"></a></p>

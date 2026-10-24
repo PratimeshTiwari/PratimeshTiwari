@@ -89,10 +89,12 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
     const y = 50 + i * rowH;
     return `${i ? `<line x1="28" y1="${y - 6}" x2="972" y2="${y - 6}" stroke="${t.track}"/>` : ''}
   ${img === 'coindcx.png'
-    // A wordmark, not a mark: drawn small enough to sit inside the tile.
-    ? `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="${t.pill}" stroke="${t.border}"/>
-  <text x="49" y="${y + 28}" text-anchor="middle" font-size="8.6" font-weight="700" letter-spacing="-0.1" fill="${t.text}">Coin<tspan fill="#ff6a1a">DCX</tspan></text>`
-    : monoLogo(img, 28, y + 4, 42, t)}
+    // CoinDCX's own badge: a blue square, "Coin" in white, "DCX" in orange.
+    ? `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="#1d2b8f"/>
+  <text x="49" y="${y + 28.5}" text-anchor="middle" font-size="8.8" font-weight="700" letter-spacing="-0.1" fill="#ffffff">Coin<tspan fill="#ff6a1a">DCX</tspan></text>`
+    // The real logo, on a white rounded tile with no border — as LinkedIn shows it.
+    : `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="#ffffff"/>
+  <image href="${data(img)}" x="34" y="${y + 10}" width="30" height="30" preserveAspectRatio="xMidYMid meet"/>`}
   <text x="86" y="${y + 22}" font-size="15" font-weight="600" fill="${t.text}">${esc(title)} <tspan font-weight="400" fill="${t.muted}">· ${esc(co)}</tspan></text>
   <text x="86" y="${y + 42}" font-size="12.5" fill="${t.muted}">${esc(kind)}</text>
   <text x="972" y="${y + 22}" text-anchor="end" font-size="13" fill="${t.text}">${esc(when)}</text>

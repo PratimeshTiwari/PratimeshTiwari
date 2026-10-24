@@ -25,7 +25,7 @@
   <a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate"><img src="assets/project-interview-mate-dark.svg" alt="Agentic Interview Mate: an AI interviewer on Cloudflare" width="49.4%"></a>
 </p>
 
-<p><a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/special-dark.svg" alt="Special mention: Smart India Hackathon 2024 participant — Skill-Pilot, a career counselling portal using the Gemini API" width="100%"></a></p>
+<p><a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/special-dark.svg" alt="Hackathons: winner of the Eightfold.ai Internal T2 Hackathon, May 2026 (a user onboarding demo); participant in Smart India Hackathon 2024 with Skill-Pilot, a career counselling portal using the Gemini API" width="100%"></a></p>
 
 <p><img src="assets/toolbox-dark.svg" alt="Toolbox: TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%"></p>
 

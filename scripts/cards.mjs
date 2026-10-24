@@ -96,16 +96,25 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   ${pills(24, 404, tags, t)}`, title));
   }
 
-  // Special mention: text left, the advisor chat right.
+  // Hackathons: the win first, then SIH with the advisor chat on the right.
+  const gold = name === 'dark' ? '#e3b341' : '#9a6700';
   const sm = wrap('Built Skill-Pilot, a career counselling portal for school students. It uses the Gemini API to choose each next question from what the student has told it so far, evaluates their answers, and suggests career paths with a roadmap, in their own language.', 13.5, 560);
-  writeFileSync(`${OUT}/special-${name}.svg`, svg(1000, 230, t, `
-  ${label(28, 40, 'Special mention', t)}
-  <text x="28" y="74" font-size="19" font-weight="700" fill="${t.text}">Smart India Hackathon 2024 <tspan font-weight="400" fill="${t.muted}">· Participant</tspan></text>
-  ${lines(28, 102, sm, 13.5, t.muted)}
-  ${pills(28, 196, ['JavaScript', 'React', 'Node.js', 'Gemini API'], t)}
-  <rect x="640" y="16" width="344" height="198" rx="9" fill="${t.track}" stroke="${t.border}"/>
-  <circle cx="656" cy="30" r="4" fill="#ff5f56"/><circle cx="670" cy="30" r="4" fill="#ffbd2e"/><circle cx="684" cy="30" r="4" fill="#27c93f"/>
-  ${picture('sih2024.jpg', 646, 42, 332, 166, 5)}`, 'Smart India Hackathon 2024 — Skill-Pilot'));
+  writeFileSync(`${OUT}/special-${name}.svg`, svg(1000, 318, t, `
+  ${label(28, 40, 'Hackathons', t)}
+  <rect x="28" y="58" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
+  <text x="63" y="73" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
+  <text x="110" y="75" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon</text>
+  <text x="28" y="104" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
+  <text x="972" y="75" text-anchor="end" font-size="13" fill="${t.text}">May 2026</text>
+  <line x1="28" y1="126" x2="972" y2="126" stroke="${t.track}"/>
+  <rect x="28" y="146" width="96" height="22" rx="11" fill="none" stroke="${t.border}"/>
+  <text x="76" y="161" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${t.muted}">PARTICIPANT</text>
+  <text x="136" y="163" font-size="19" font-weight="700" fill="${t.text}">Smart India Hackathon 2024</text>
+  ${lines(28, 192, sm, 13.5, t.muted)}
+  ${pills(28, 286, ['JavaScript', 'React', 'Node.js', 'Gemini API'], t)}
+  <rect x="640" y="140" width="344" height="162" rx="9" fill="${t.track}" stroke="${t.border}"/>
+  <circle cx="656" cy="154" r="4" fill="#ff5f56"/><circle cx="670" cy="154" r="4" fill="#ffbd2e"/><circle cx="684" cy="154" r="4" fill="#27c93f"/>
+  ${picture('sih2024.jpg', 646, 166, 332, 130, 5)}`, 'Hackathons: winner, Eightfold.ai Internal T2 Hackathon, May 2026; participant, Smart India Hackathon 2024'));
 
   // Toolbox: the icon row inside a matching card.
   const step = (972 - 28) / ICONS.length;

@@ -104,27 +104,47 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   ${pills(24, 404, tags, t)}`, title));
   }
 
-  // Hackathons: the win first, then SIH with the advisor chat on the right.
+  // Hackathons, as two cards: the win (no link — there is no repo for it),
+  // then SIH with the advisor chat, which links to its repo.
   const gold = name === 'dark' ? '#e3b341' : '#9a6700';
-  const sm = wrap('Built Skill-Pilot, a career counselling portal for school students. It uses the Gemini API to choose each next question from what the student has told it so far, evaluates their answers, and suggests career paths with a roadmap, in their own language.', 13.5, 560);
-  writeFileSync(`${OUT}/special-${name}.svg`, svg(1000, 318, t, `
+  writeFileSync(`${OUT}/hackathon-win-${name}.svg`, svg(1000, 138, t, `
   ${label(28, 40, 'Hackathons', t)}
-  <rect x="28" y="54" width="944" height="64" rx="8" fill="${gold}" fill-opacity="0.07" stroke="${gold}" stroke-opacity="0.35"/>
+  <rect x="28" y="56" width="944" height="64" rx="8" fill="${gold}" fill-opacity="0.07" stroke="${gold}" stroke-opacity="0.35"/>
   <g transform="translate(500 0)">
-    <rect x="-262" y="64" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
-    <text x="-227" y="79" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
-    <text x="-180" y="81" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon <tspan font-weight="400" fill="${t.muted}">· May 2026</tspan></text>
-    <text x="0" y="106" text-anchor="middle" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
-  </g>
-  <line x1="28" y1="126" x2="972" y2="126" stroke="${t.track}"/>
-  <rect x="28" y="146" width="96" height="22" rx="11" fill="none" stroke="${t.border}"/>
-  <text x="76" y="161" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${t.muted}">PARTICIPANT</text>
-  <text x="136" y="163" font-size="19" font-weight="700" fill="${t.text}">Smart India Hackathon 2024</text>
-  ${lines(28, 192, sm, 13.5, t.muted)}
-  ${pills(28, 286, ['JavaScript', 'React', 'Node.js', 'Gemini API'], t)}
-  <rect x="640" y="140" width="344" height="162" rx="9" fill="${t.track}" stroke="${t.border}"/>
-  <circle cx="656" cy="154" r="4" fill="#ff5f56"/><circle cx="670" cy="154" r="4" fill="#ffbd2e"/><circle cx="684" cy="154" r="4" fill="#27c93f"/>
-  ${picture('sih2024.jpg', 646, 166, 332, 130, 5)}`, 'Hackathons: winner, Eightfold.ai Internal T2 Hackathon, May 2026; participant, Smart India Hackathon 2024'));
+    <rect x="-262" y="66" width="70" height="22" rx="11" fill="none" stroke="${gold}"/>
+    <text x="-227" y="81" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${gold}">WINNER</text>
+    <text x="-180" y="83" font-size="19" font-weight="700" fill="${t.text}">Eightfold.ai Internal T2 Hackathon <tspan font-weight="400" fill="${t.muted}">· May 2026</tspan></text>
+    <text x="0" y="108" text-anchor="middle" font-size="13.5" fill="${t.muted}">Built a user onboarding demo.</text>
+  </g>`, 'Winner, Eightfold.ai Internal T2 Hackathon, May 2026'));
+
+  const sm = wrap('Built Skill-Pilot, a career counselling portal for school students. It uses the Gemini API to choose each next question from what the student has told it so far, evaluates their answers, and suggests career paths with a roadmap, in their own language.', 13.5, 560);
+  writeFileSync(`${OUT}/hackathon-sih-${name}.svg`, svg(1000, 200, t, `
+  <rect x="28" y="24" width="96" height="22" rx="11" fill="none" stroke="${t.border}"/>
+  <text x="76" y="39" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="${t.muted}">PARTICIPANT</text>
+  <text x="136" y="41" font-size="19" font-weight="700" fill="${t.text}">Smart India Hackathon 2024</text>
+  ${lines(28, 72, sm, 13.5, t.muted)}
+  ${pills(28, 172, ['JavaScript', 'React', 'Node.js', 'Gemini API'], t)}
+  <rect x="640" y="18" width="344" height="164" rx="9" fill="${t.track}" stroke="${t.border}"/>
+  <circle cx="656" cy="32" r="4" fill="#ff5f56"/><circle cx="670" cy="32" r="4" fill="#ffbd2e"/><circle cx="684" cy="32" r="4" fill="#27c93f"/>
+  ${picture('sih2024.jpg', 646, 44, 332, 132, 5)}`, 'Participant, Smart India Hackathon 2024 — Skill-Pilot'));
+
+  // Link buttons in the card style: each its own image, so each keeps its link.
+  const ICON = {
+    website: (c) => `<circle cx="10" cy="10" r="8" fill="none" stroke="${c}" stroke-width="1.6"/><ellipse cx="10" cy="10" rx="3.6" ry="8" fill="none" stroke="${c}" stroke-width="1.4"/><line x1="2" y1="10" x2="18" y2="10" stroke="${c}" stroke-width="1.4"/>`,
+    linkedin: (c) => `<rect x="1" y="1" width="18" height="18" rx="3.5" fill="${c}"/><text x="10" y="15" text-anchor="middle" font-size="12" font-weight="800" fill="${t.bg}">in</text>`,
+    email: (c) => `<rect x="1" y="3.5" width="18" height="13" rx="2.5" fill="none" stroke="${c}" stroke-width="1.6"/><polyline points="2,5 10,11 18,5" fill="none" stroke="${c}" stroke-width="1.6" stroke-linejoin="round"/>`,
+    leetcode: () => `<g transform="scale(0.84)"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" fill="#ffa116"/></g>`,
+  };
+  for (const [id, text] of [['website', 'pratimeshtiwari.com'], ['linkedin', 'LinkedIn'], ['email', 'Email'], ['leetcode', 'LeetCode']]) {
+    const w = Math.round(text.length * 8.2 + 62);
+    writeFileSync(`${OUT}/link-${id}-${name}.svg`, `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="40" viewBox="0 0 ${w} 40" font-family="${FONT}">
+  <title>${esc(text)}</title>
+  <rect x="0.5" y="0.5" width="${w - 1}" height="39" rx="8" fill="${t.bg}" stroke="${t.border}"/>
+  <g transform="translate(16 10)">${ICON[id](t.text)}</g>
+  <text x="46" y="25" font-size="14" font-weight="600" fill="${t.text}">${esc(text)}</text>
+</svg>
+`);
+  }
 
   // Toolbox: the icon row inside a matching card.
   const step = (972 - 28) / ICONS.length;

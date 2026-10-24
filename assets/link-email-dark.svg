@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="103" height="40" viewBox="0 0 103 40" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Email</title>
+  <rect x="0.5" y="0.5" width="102" height="39" rx="8" fill="#0d1117" stroke="#30363d"/>
+  <g transform="translate(16 10)"><rect x="1" y="3.5" width="18" height="13" rx="2.5" fill="none" stroke="#e6edf3" stroke-width="1.6"/><polyline points="2,5 10,11 18,5" fill="none" stroke="#e6edf3" stroke-width="1.6" stroke-linejoin="round"/></g>
+  <text x="46" y="25" font-size="14" font-weight="600" fill="#e6edf3">Email</text>
+</svg>

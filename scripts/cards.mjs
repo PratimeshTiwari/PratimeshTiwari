@@ -60,7 +60,8 @@ const PROJECTS = [
   ['agent-cli', 'agent-cli.svg', 'Agent CLI', 'A Claude Code-style coding agent for the terminal with no API key. It drives a Gemini tab in your own Chrome, then reads, searches, edits as diffs you approve and runs commands.', ['Node.js', 'React/Ink', 'Chrome MV3', 'VS Code']],
   ['interview-mate', 'interview-mate.jpg', 'Agentic Interview Mate', 'An AI interviewer that runs mock interviews by voice or chat, scores each answer as you speak, flags answers that look read out or AI-written, and remembers you between sessions.', ['TypeScript', 'Workers', 'Durable Objects', 'Workers AI']],
 ];
-const ICONS = ['ts', 'js', 'nodejs', 'react', 'go', 'java', 'spring', 'py', 'cpp', 'postgres', 'mysql', 'mongodb', 'docker', 'cloudflare', 'git'];
+const TOOLS = [['javascript', 'JavaScript'], ['typescript', 'TypeScript'], ['python', 'Python'], ['openjdk', 'Java'], ['cplusplus', 'C++'],
+  ['sql', 'SQL'], ['mongodb', 'MongoDB'], ['git', 'Git'], ['github', 'GitHub']];
 
 for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   clipId = 0;
@@ -82,7 +83,7 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
     // reads the way CoinDCX's own badge does.
     ? `<rect x="28" y="${y + 4}" width="42" height="42" rx="8" fill="${t.pill}" stroke="${t.border}"/>
   <text x="49" y="${y + 29}" text-anchor="middle" font-size="10.5" font-weight="700" fill="${t.text}">Coin<tspan fill="#ff6a1a">DCX</tspan></text>`
-    : logo(img, 28, y + 4, 42, t)}
+    : logo(img, 28, y + 4, 42, img === 'machaxi.png' ? { ...t, pill: '#f6f8fa' } : t)}
   <text x="86" y="${y + 22}" font-size="15" font-weight="600" fill="${t.text}">${esc(title)} <tspan font-weight="400" fill="${t.muted}">· ${esc(co)}</tspan></text>
   <text x="86" y="${y + 42}" font-size="12.5" fill="${t.muted}">${esc(kind)}</text>
   <text x="972" y="${y + 22}" text-anchor="end" font-size="13" fill="${t.text}">${esc(when)}</text>
@@ -152,11 +153,25 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
 `);
   }
 
-  // Toolbox: the icon row inside a matching card.
-  const step = (972 - 28) / ICONS.length;
-  writeFileSync(`${OUT}/toolbox-${name}.svg`, svg(1000, 112, t, `
+  // Toolbox: a short list, each as a chip like the link buttons — a white
+  // single-colour icon (Simple Icons, CC0) and its name. SQL has no logo, so
+  // it gets a drawn database.
+  const monoPath = (slug) => readFileSync(`${SRC}/mono-${slug}.svg`, 'utf8').match(/<path d="([^"]+)"/)[1];
+  const DB = '<ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="CLR" stroke-width="2"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" fill="none" stroke="CLR" stroke-width="2"/>';
+  const chips = TOOLS.map(([slug, text]) => ({ slug, text, w: Math.round(text.length * 7.6 + 50) }));
+  const rowsOf = []; let cur = []; let used = 0;
+  for (const c of chips) { if (used + c.w > 944 && cur.length) { rowsOf.push(cur); cur = []; used = 0; } cur.push(c); used += c.w + 10; }
+  if (cur.length) rowsOf.push(cur);
+  const th = 58 + rowsOf.length * 50;
+  const chipSvg = rowsOf.map((row, ri) => { let x = 28; return row.map((c) => {
+    const y = 48 + ri * 50;
+    const icon = c.slug === 'sql' ? DB.replaceAll('CLR', t.text) : `<path d="${monoPath(c.slug)}" fill="${t.text}"/>`;
+    const out = `<rect x="${x}" y="${y}" width="${c.w}" height="38" rx="8" fill="${t.bg}" stroke="${t.border}"/>
+  <g transform="translate(${x + 14} ${y + 10}) scale(0.75)">${icon}</g>
+  <text x="${x + 42}" y="${y + 24}" font-size="13.5" font-weight="600" fill="${t.text}">${esc(c.text)}</text>`;
+    x += c.w + 10; return out; }).join('\n  '); }).join('\n  ');
+  writeFileSync(`${OUT}/toolbox-${name}.svg`, svg(1000, th, t, `
   ${label(28, 32, 'Toolbox', t)}
-  ${ICONS.map((i, n) => `<image href="${data(`icon-${i}.svg`)}" x="${(28 + n * step + (step - 48) / 2).toFixed(1)}" y="46" width="48" height="48"/>`).join('\n  ')}`,
-  'TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git'));
+  ${chipSvg}`, TOOLS.map(([, n]) => n).join(', ')));
 }
 console.log('cards written');

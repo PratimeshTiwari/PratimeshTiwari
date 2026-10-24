@@ -24,7 +24,7 @@
 
 <p><a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/hackathon-sih-dark.svg" alt="Participant, Smart India Hackathon 2024: Skill-Pilot, a career counselling portal that uses the Gemini API to choose questions, evaluate answers and suggest career paths" width="100%"></a></p>
 
-<p><img src="assets/toolbox-dark.svg" alt="Toolbox: TypeScript, JavaScript, Node.js, React, Go, Java, Spring, Python, C++, PostgreSQL, MySQL, MongoDB, Docker, Cloudflare, Git" width="100%"></p>
+<p><img src="assets/toolbox-dark.svg" alt="Toolbox: JavaScript, TypeScript, Python, Java, C++, SQL, MongoDB, Git, GitHub" width="100%"></p>
 
 <p><a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/leetcode-dark.svg" alt="LeetCode: problems solved, contest rating, rating and submissions over time" width="100%"></a></p>
 

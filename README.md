@@ -60,15 +60,14 @@
   </tr>
   <tr>
     <td colspan="2" valign="top">
-      <a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/sih2024.jpg" alt="Skill-Pilot: the career advisor chat building a roadmap for a 12th-class arts student" width="55%" align="right"></a>
-      <h3><a href="https://github.com/PratimeshTiwari/SIH2024">Skill-Pilot</a></h3>
-      <b>Smart India Hackathon 2024</b> · Career Counselling Portal
+      <a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/sih2024.jpg" alt="Skill-Pilot's career advisor chat" width="38%" align="right"></a>
+      <sub>SPECIAL MENTION</sub>
+      <h3>Smart India Hackathon 2024 · Participant</h3>
+      Built <b><a href="https://github.com/PratimeshTiwari/SIH2024">Skill-Pilot</a></b>, a career counselling portal for
+      school students: an AI career advisor that builds a career roadmap through a guided chat, in the
+      student's own language, with mentorship and workshops alongside.
       <br><br>
-      An AI career advisor for school students. A guided chat works out where a student is — class,
-      stream, interests — and builds a career roadmap in their own language, alongside mentorship,
-      workshops and a community.
-      <br><br>
-      <sub>JavaScript · React · Node.js · AI career guidance · multilingual</sub>
+      <sub>JavaScript · React · Node.js</sub>
     </td>
   </tr>
 </table>

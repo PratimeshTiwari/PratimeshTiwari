@@ -20,17 +20,17 @@
   <text x="392" y="100" font-size="12" fill="#8d96a0">contests</text>
   
   <text x="475" y="48" font-size="13" fill="#e6edf3">Easy</text>
-  <text x="615" y="48" text-anchor="end" font-size="12" fill="#8d96a0">209 / 972</text>
+  <text x="615" y="48" text-anchor="end" font-size="12" fill="#8d96a0">209 / 974</text>
   <rect x="475" y="55" width="140" height="4" rx="2" fill="#21262d"/>
-  <rect x="475" y="55" width="30.1" height="4" rx="2" fill="#00b8a3"/>
+  <rect x="475" y="55" width="30.0" height="4" rx="2" fill="#00b8a3"/>
   <text x="475" y="82" font-size="13" fill="#e6edf3">Medium</text>
-  <text x="615" y="82" text-anchor="end" font-size="12" fill="#8d96a0">382 / 2,131</text>
+  <text x="615" y="82" text-anchor="end" font-size="12" fill="#8d96a0">382 / 2,135</text>
   <rect x="475" y="89" width="140" height="4" rx="2" fill="#21262d"/>
-  <rect x="475" y="89" width="25.1" height="4" rx="2" fill="#ffc01e"/>
+  <rect x="475" y="89" width="25.0" height="4" rx="2" fill="#ffc01e"/>
   <text x="475" y="116" font-size="13" fill="#e6edf3">Hard</text>
-  <text x="615" y="116" text-anchor="end" font-size="12" fill="#8d96a0">77 / 984</text>
+  <text x="615" y="116" text-anchor="end" font-size="12" fill="#8d96a0">77 / 986</text>
   <rect x="475" y="123" width="140" height="4" rx="2" fill="#21262d"/>
-  <rect x="475" y="123" width="11.0" height="4" rx="2" fill="#ef4743"/>
+  <rect x="475" y="123" width="10.9" height="4" rx="2" fill="#ef4743"/>
   
   <text x="645" y="36" font-size="12" fill="#8d96a0">Rating</text>
   <text x="800" y="36" text-anchor="end" font-size="12" fill="#e6edf3">1856</text>

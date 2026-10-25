@@ -170,9 +170,16 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
   // it gets a drawn database.
   const monoPath = (slug) => readFileSync(`${SRC}/mono-${slug}.svg`, 'utf8').match(/<path d="([^"]+)"/)[1];
   const DB = '<ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="CLR" stroke-width="2"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" fill="none" stroke="CLR" stroke-width="2"/>';
-  const chips = TOOLS.map(([slug, text]) => ({ slug, text, w: Math.round(text.length * 7.6 + 50) }));
+  // Chip width from the text's width at 13.5px semibold, per character: a flat
+  // 7.6px each was right for "Git" and too narrow for "MongoDB", whose capitals
+  // ran over the chip's right border.
+  const GLYPH = (ch) => (/[MWmw]/.test(ch) ? 11.5 : /[A-HK-LN-VX-Z]/.test(ch) ? 9 : /[ijlI!.,']/.test(ch) ? 3.8
+    : /[tfrJ]/.test(ch) ? 5.6 : /\+/.test(ch) ? 8.5 : 7.6);
+  const textWidth = (text) => [...text].reduce((n, ch) => n + GLYPH(ch), 0);
+  const GAP = 8;
+  const chips = TOOLS.map(([slug, text]) => ({ slug, text, w: Math.round(42 + textWidth(text) + 12) }));
   const rowsOf = []; let cur = []; let used = 0;
-  for (const c of chips) { if (used + c.w > 944 && cur.length) { rowsOf.push(cur); cur = []; used = 0; } cur.push(c); used += c.w + 10; }
+  for (const c of chips) { if (used + c.w > 944 && cur.length) { rowsOf.push(cur); cur = []; used = 0; } cur.push(c); used += c.w + GAP; }
   if (cur.length) rowsOf.push(cur);
   const th = 58 + rowsOf.length * 50;
   const chipSvg = rowsOf.map((row, ri) => { let x = 28; return row.map((c) => {
@@ -181,7 +188,7 @@ for (const [name, t] of Object.entries(THEMES).filter(([n]) => n === 'dark')) {
     const out = `<rect x="${x}" y="${y}" width="${c.w}" height="38" rx="8" fill="${t.bg}" stroke="${t.border}"/>
   <g transform="translate(${x + 14} ${y + 10}) scale(0.75)">${icon}</g>
   <text x="${x + 42}" y="${y + 24}" font-size="13.5" font-weight="600" fill="${t.text}">${esc(c.text)}</text>`;
-    x += c.w + 10; return out; }).join('\n  '); }).join('\n  ');
+    x += c.w + GAP; return out; }).join('\n  '); }).join('\n  ');
   writeFileSync(`${OUT}/toolbox-${name}.svg`, svg(1000, th, t, `
   ${label(28, 32, 'Toolbox', t)}
   ${chipSvg}`, TOOLS.map(([, n]) => n).join(', ')));

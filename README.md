@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <a href="https://github.com/PratimeshTiwari/Agent-CLI"><img src="assets/project-agent-cli-dark.svg?v=31fed1ff" alt="Agent CLI: a Claude Code-style coding agent for the terminal with no API key" width="49.4%"></a>
+  <a href="https://github.com/PratimeshTiwari/Agent-CLI"><img src="assets/project-agent-cli-dark.svg?v=99237401" alt="Agent CLI: a Claude Code-style coding agent for the terminal with no API key" width="49.4%"></a>
   <a href="https://github.com/PratimeshTiwari/cf_ai_agentic_interview_mate"><img src="assets/project-interview-mate-dark.svg?v=54f69e21" alt="Agentic Interview Mate: an AI interviewer on Cloudflare" width="49.4%"></a>
 </p>
 
@@ -24,7 +24,7 @@
 
 <p><a href="https://github.com/PratimeshTiwari/SIH2024"><img src="assets/hackathon-sih-dark.svg?v=3ffed3cd" alt="Participant, Smart India Hackathon 2024: Skill-Pilot, a career counselling portal that uses the Gemini API to choose questions, evaluate answers and suggest career paths" width="100%"></a></p>
 
-<p><img src="assets/toolbox-dark.svg?v=07184ef6" alt="Toolbox: JavaScript, TypeScript, Python, Java, C++, SQL, MongoDB, Git, GitHub" width="100%"></p>
+<p><img src="assets/toolbox-dark.svg?v=e883f1d6" alt="Toolbox: JavaScript, TypeScript, Python, Java, C++, SQL, MongoDB, Git, GitHub" width="100%"></p>
 
 <p><a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/leetcode-dark.svg?v=0ad9419b" alt="LeetCode: problems solved, contest rating, rating and submissions over time" width="100%"></a></p>
 

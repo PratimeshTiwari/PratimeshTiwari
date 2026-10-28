@@ -26,6 +26,6 @@
 
 <p><img src="assets/toolbox-dark.svg?v=e883f1d6" alt="Toolbox: JavaScript, TypeScript, Python, Java, C++, SQL, MongoDB, Git, GitHub" width="100%"></p>
 
-<p><a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/leetcode-dark.svg?v=0ad9419b" alt="LeetCode: problems solved, contest rating, rating and submissions over time" width="100%"></a></p>
+<p><a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/leetcode-dark.svg?v=f0bb404d" alt="LeetCode: problems solved, contest rating, rating and submissions over time" width="100%"></a></p>
 
-<p><a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-dark.svg?v=67f6df65" alt="GitHub: contributions, repos, PRs, languages and contributions over time" width="100%"></a></p>
+<p><a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-dark.svg?v=44a8c97e" alt="GitHub: contributions, repos, PRs, languages and contributions over time" width="100%"></a></p>

@@ -28,4 +28,4 @@
 
 <p><a href="https://leetcode.com/u/pratimeshtiwari/"><img src="assets/leetcode-dark.svg?v=f0bb404d" alt="LeetCode: problems solved, contest rating, rating and submissions over time" width="100%"></a></p>
 
-<p><a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-dark.svg?v=44a8c97e" alt="GitHub: contributions, repos, PRs, languages and contributions over time" width="100%"></a></p>
+<p><a href="https://github.com/PratimeshTiwari?tab=repositories"><img src="assets/github-dark.svg?v=758bda77" alt="GitHub: contributions, repos, PRs, languages and contributions over time" width="100%"></a></p>
